@@ -15,7 +15,7 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
-	public Cliente buscar(Integer id) {
+	public Cliente find(Integer id) {
 		Optional<Cliente> obj = clienteRepository.findById(id);
 		return obj.orElseThrow(() -> new com.example.cursomc.services.exceptions.ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
